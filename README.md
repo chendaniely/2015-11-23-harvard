@@ -39,6 +39,7 @@ https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 The stream seemed to work!
 
 Git collboration: https://www.livecoding.tv/video/2015-11-23-harvard-git/
+
 Git branching: https://www.livecoding.tv/video/2015-11-23-harvard-git-branches/
 
 # Instructions for the exercies
