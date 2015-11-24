@@ -42,6 +42,10 @@ Git collboration: https://www.livecoding.tv/video/2015-11-23-harvard-git/
 
 Git branching: https://www.livecoding.tv/video/2015-11-23-harvard-git-branches/
 
+![Alt text](/whiteboard_images/01-git.jpg?raw=true)
+
+![Alt text](/whiteboard_images/02-branching.jpg?raw=true "Optional Title")
+
 # Instructions for the exercies
 
 ## Collboration and Forking Exercise
