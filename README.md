@@ -1,236 +1,195 @@
-# workshop-template
+The website for today's lesson can be found here: http://chendaniely.github.io/2015-11-23-harvard/.
 
-This repository is [Software Carpentry](http://software-carpentry.org)'s
-template for creating websites for workshops.
+You can read up on the software carpentry Git lesson here: http://swcarpentry.github.io/git-novice/
 
-1.  Do *not* fork this repository directly on GitHub.
-    Instead, please use GitHub's importer following the instructions [below](#creating-a-repository)
-    to create a website repository for your workshop.
+Link to the etherpad: http://pad.software-carpentry.org/2015-11-23-harvard
+I will save this after the workshop into the course website so it's backed up in multiple places.
 
-2.  Please *do your work in your repository's `gh-pages` branch*,
-    since that is what is [automatically published as a website by GitHub](https://help.github.com/articles/creating-project-pages-manually/).
+We will learn not to do this anymore: https://xkcd.com/1597/
 
-3.  Once you are done,
-    please **send your repository's URL to the [Software Carpentry administrator](mailto:admin@software-carpentry.org)**.
-    We build the [list of workshops on the main website](http://software-carpentry.org/workshops/index.html)
-    from the data included in your `index.html` page.
-    We can only do that if you [customize](CUSTOMIZATION.md) that page correctly
-    *and* send us a link to your workshop website.
+Please write good commit messages: https://xkcd.com/1296/
 
-4.  Please also read
-    [the notes on customizing your website](CUSTOMIZATION.md) and the [FAQ](FAQ.md).
-    If you're interested in knowing more about why we do things the way we do,
-    please check out the [design notes](DESIGN.md).
+Git will help you version control so you you really do end up with 1 final doc: http://www.phdcomics.com/comics/archive.php?comicid=1531
 
-5.  If you are teaching Git,
-    please [create a separate repository](#setting-up-a-separate-repository-for-learners)
-    for your learners to practice in.
+# Etherpad Contents
 
-6.  If you run into problems,
-    or have ideas about how to make this process simpler,
-    please [get in touch](#getting-and-giving-help).
+Reference:
+A Quick Guide to Organizing Computational Biology Projects
+http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424
 
-## Creating a Repository
+http://software-carpentry.org/
+go to lessons: http://software-carpentry.org/lessons.html
+go to the git site: http://swcarpentry.github.io/git-novice/
+Git configurations: http://swcarpentry.github.io/git-novice/02-setup.html
 
-1.  Go to [GitHub's importer][import].
+learn git branching: http://pcottle.github.io/learnGitBranching/
 
-2.  Click on "Check the URL".  (GitHub won't import until you've done this.)
+git flow workflow:
+    https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
 
-3.  Select the owner for your new repository.
-    (This will probably be you, but may instead be an organization you belong to.)
+http://nvie.com/posts/a-successful-git-branching-model/x`
 
-4.  Choose a name for your workshop website repository.
-    This name should have the form `YYYY-MM-DD-site`,
-    e.g., `2015-07-01-miskatonic`.
+git setup:
+$ git config --global user.name "Vlad Dracula"
+$ git config --global user.email "vlad@tran.sylvan.ia"
+$ git config --global color.ui "auto"
+$ git config --global core.editor "nano -w"
 
-5.  Make sure the repository is public.
 
-6.  At this point, you should have a page like this:
+git init
+this will turn the current folder into a git repository, everything from here on will be tracked
+git status 
 
-    ![](http://software-carpentry.org/img/workshop-template/using-github-import.png)
+ls -a will let you see hidden folders - e.g. the .git folder
 
-    You can now click "Begin Import".
-    When the process is done,
-    you can click "Continue to repository" to visit your newly-created repository.
+git status allows us to see what's being tracked and anything that has changed
 
-**Note:**
-some people have had intermittent errors during the import process,
-possibly because of the network timing out.
-If you experience a problem, please re-try;
-if the problem persists,
-please [get in touch](#getting-and-giving-help).
+example:
+git add README.md          
+This adds the file to the staging area. This only needs to be done once. You can also use: git add . 
 
-To clone your new repository, use:
+git config --list        This lets you see what commands you have run
 
-~~~
-git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
-~~~
+.gitignore
+Git will not track what's specified in here
 
-This is needed because the imported repository doesn't have a `master` branch.
+git log will let you see the log of all the work you had done in reverse chronological order
+git log --oneline to see with less whitespace
+exiting using "Q" if running the log opens a new file
 
-**Note:** please do all of your work in your repository's `gh-pages` branch,
-since [GitHub automatically publishes that as a website](https://help.github.com/articles/creating-project-pages-manually/).
+git diff to see the differences between two files
+use this if you're not sure why a file is being shown as 'modified'
+git diff HEAD~1 this lets us check what the file looked like two commits behind us
+git diff --stage for one commit behind
 
-## Customizing Your Website
+Use "touch" to create a file
 
-1.  Go into your newly-created repository,
-    which will be at `https://github.com/your_username/YYYY-MM-DD-site`.
-    For example,
-    if `your_username` is `gvwilson`,
-    the repository's URL will be `https://github.com/gvwilson/2015-07-01-mistaktonic`.
+Track a deleted file by adding the file after git status just like any other action with a file. You can "undelete" using checkout
 
-2.  Edit `index.html` to customize the list of instructors,
-    workshop venue,
-    etc.
-    You can do this in the browser by clicking on it in the file view
-    and then selecting the pencil icon in the menu bar:
+checkout
+git checkout is  used to take your "head" and point it somewhere else, like to your old commits 
+You can do this using either ~ or the hash from the log
 
-    ![](http://software-carpentry.org/img/workshop-template/edit-index-file-menu-bar.png)
+Panic button
+git reset --hard
 
-    or you can clone the repository to your desktop,
-    edit `index.html` there,
-    and push your changes back to the repository.
-    Editing hints are embedded in `index.html`,
-    and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
+Moving a git tracked folder (entire repo) to another folder is fine. Git only tracks what's happening within the repo
 
-3.  Edit `_config.yml` in the same way
-    so that `workshop_repo` and `workshop_site`
-    are the URLs of your repository and your GitHub Pages website respectively.
+GitHub in the cloud (BitBucket is an alternative)
+Unlimited free public repos with GitHub
+can distribute "raw" by just right clicking raw button and sharing that link
 
-    Note: the URL for your website is determined automatically
-    based on the URL for your repository.
-    If your repository is at `https://github.com/gvwilson/2015-07-01-mistaktonic`,
-    its GitHub Pages website is at `http://gvwilson.github.io/2015-07-01-miskatonic`.
+Remote origin 
+"origin" --> where
+"master" --> what
+Push to the cloud
+Pull to bring it back to your local repo
 
-4.  When you are done editing,
-    you can preview your website.
-    Again,
-    if your repository is `https://github.com/your_username/YYYY-MM-DD-site`,
-    its website will be `http://your_username.github.io/YYYY-MM-DD-site`.
+Adding a remote repo:
+git remote add origin [webaddress.git] 
+insert your repo address (https) in the brackets
+Use git remote -v to check whether or not you have connected to your remote repo on GitHub 
+git push origin master 
+this is used to push your local repo to your remote; you may initially be prompted to enter your username and password
 
-Full instructions are available in [CUSTOMIZATION.md](CUSTOMIZATION.md).
-This [FAQ](FAQ.md) includes a few extra tips
-(additions are always welcome)
-and these notes on [the background and design](DESIGN.md) of this template may help as well.
+Unstaging a file
+git reset
 
-That's it.
-The following steps are only necessary if you want to run the website locally on your computer.
+git pull origin master
+"pulling" the changes that exist in the remote repo to your local machine
+Fast forward message == extending our local master branch one commit
 
-## Checking Your Changes
-
-**Note:** to check your changes you need some softwares
-that are describe at [Installing Software session](#installing-software).
-
-No matter how you edit `index.html`, you should:
-
-1.  Check your changes by running `tools/check.py` at the command line
-    from the root directory of your repository.
-
-2.  Preview your changes by running `tools/preview` and looking at `_site/index.html`.
-
-For some links to work properly,
-particularly the link to your workshop's Eventbrite registration page,
-you must view `_site/index.html` using an HTTP server.
-If you have Jekyll installed,
-you can do this by running:
-
-~~~
-$ jekyll server -d _site
-~~~
-
-and going to http://localhost:4000.
-
-## Installing Software
-
-In order to preview the workshop website locally on your computer,
-you must install the software described below.
-
-> If you aren't able to install this software (or you just can't be
-> bothered), you can still create a website for your workshop.  Every
-> time you push a change to your website respository the live website
-> will update automatically, so you can check your changes on the live
-> site instead of locally.
-
-1.  Ruby 2.0 or greater
-
-    On Debian/Ubuntu based machines you can install it using
-
-    ~~~
-    $ sudo apt-get install ruby2.0 ruby2.0-dev
-    ~~~
-
-2.  NodeJS
-
-    On Debian/Ubuntu based machines you can install it using
-
-    ~~~
-    $ sudo apt-get install nodejs
-    ~~~
-
-3.  Jekyll
-
-    Install `github-pages`:
-
-     ~~~
-     $ gem install github-pages
-     ~~~
-
-     or if that doesn't work:
-
-     ~~~
-     $ gem install jekyll
-     $ gem install kramdown
-     ~~~
-
-     We use Kramdown to translate Markdown into HTML, instead of
-     the default Redcarpet, because Kramdown handles Markdown
-     inside HTML blocks.
-
-2.  The Python YAML module
-
-    If you are using the Anaconda Python distribution, you probably
-    already have it; if you don't, you can install it with:
-
-    ~~~
-    $ conda install pyyaml
-    ~~~
-
-    If you are using some other distribution, you can install the
-    Python YAML module using Pip:
-
-    ~~~
-    $ pip install pyyaml
-    ~~~
-
-    and if you are on Debian Linux, you can use:
-
-    ~~~
-    $ apt-get install python-yaml
-    ~~~
-
-## Setting Up a Separate Repository for Learners
-
-If you are teaching Git,
-you should create a separate repository for learners to use in that lesson.
-You should not have them use the workshop website repository because:
-
-*   your workshop website repository contains many files
-    that most learners don't need to see during the lesson,
-    and
-
-*   you probably don't want to accidentally merge
-    a damaging pull request from a novice Git user
-    into your workshop's website while you are using it to teach.
-
-You can call this repository whatever you like,
-and add whatever content you need to it.
-
-## Getting and Giving Help
-
-We are committed to offering a pleasant setup experience for our learners and organizers.
-If you find bugs in our instructions,
-or would like to suggest improvements,
-please [file an issue](https://github.com/swcarpentry/workshop-template/issues)
-or [mail us](mailto:admin@software-carpentry.org).
-
-[import]: http://import.github.com/new?import_url=https://github.com/swcarpentry/workshop-template
+Fixing conflicts within a file 
+done manually -- you clean this up in your text editor
+Then you need to push back to the remote
+
+Live Coding Stream:
+https://www.livecoding.tv/chendaniely/
+
+Cloning  - one time download from GitHub to local computer
+downloading and initiating repo into your local machine
+
+Fork - one time download from GitHub to GitHub
+Click the "fork" button to make a copy of the repo you want to contribute to *in your account*
+You can then edit this version of the code and eventually submit a pull request to the original repo owner
+
+Pull Request - please accept my changes from my fork back into your repo
+*Always add a clear message to the person who's repo you forked. 
+
+3 Part Exercise for Collaborating with Others:
+
+Pair up, into person A and person B
+Part I
+1. person-A fork person-B's repository
+2. person-A clone the forked repository to your local computer
+3. person-A make a change to the repository
+4. person-A push the change to your github account
+5. person-A create a pull request to person-B
+5.1. collaborate
+6. person-B accept the change    
+
+Part II
+1. person-B make a new change after your pull request
+2. person-A add person-B's repository as a new remote (upstream)
+    `git remote add upstream GIT_URL`
+3. person-A get the new changes from person-B
+4. person-A update your github fork so it is the same as Person-B    
+
+part III
+1. switch roles.
+
+Branching- a way to give a series of commits and easy to remember name
+e.g. simulation with two different parameters; you could create a branch for each version of the simulation
+
+log and show everthing:
+    git log --oneline --graph --decorate --all
+    * hit q to exit the log
+
+Creating a new branch
+git checkout -b something_else
+replace "something_else" with the name of your new branch
+git branch -a 
+lists all the branches
+git checkout branch_name
+used to move between branches. Replace branch_name with the name of your branch or master.
+* using git branch will let you create a branch but will not move you to that branch
+
+Can use cat to see the changes in the repo
+
+To merge branches you must be on the branch you  want to merge into
+e.g. to merge branches into  master, you much checkout master before you merge
+
+git branch -d 
+deletes the branch -- lowercase is safer as you'll be prompted to make sure you're ready to delete. Don't use uppercase.
+
+git push origin --delete [branch_name]
+will delete the remote branch
+
+git rebase
+e.g. git rebase master
+re-writting history - rewind and move forward to the head of master then replay commits
+
+Pair up, into person A and person B
+Part I
+1. person-A make a change to the repository (use a branch)
+        this repo will be the cloned branch you used earlier in part II
+        from person-B
+        git checkout -b BRANCH_NAME
+        make some changes and commits
+2. person-A push the change to your github account
+        git push origin (master) *this is what you did before
+        git push origin BRANCH_NAME *this is what you will do now
+3. person-A create a pull request to person-B
+4.1. collaborate
+5. person-B accept the change
+        This change will take the branch from person A
+        and merge it into person B's master branch
+
+Part II
+1. person-B make a new change after your pull request
+        Either do it on a new branch
+2. person-B send yourself a pull request and have person a collaborate, and merge
+3. person-A get the new changes from person-B
+        (git pull upstream)
+4. person-A update your github fork so it is the same as
+Person-B 
