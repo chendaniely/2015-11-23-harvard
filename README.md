@@ -1,5 +1,17 @@
 Reference: A Quick Guide to Organizing Computational Biology Projects http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424
 
+Learn more about markdown:
+
+https://help.github.com/articles/github-flavored-markdown/
+
+https://daringfireball.net/projects/markdown/
+
+http://rmarkdown.rstudio.com/
+
+http://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+
+Github websites and blogs: https://pages.github.com/
+
 The website for today's lesson can be found here: http://chendaniely.github.io/2015-11-23-harvard/.
 
 You can read up on the software carpentry Git lesson here: http://swcarpentry.github.io/git-novice/
