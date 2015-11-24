@@ -78,27 +78,26 @@ part III
 Pair up, into person A and person B
 Part I
 1. person-A make a change to the repository (use a branch)
-        this repo will be the cloned branch you used earlier in part II
-        from person-B
-        git checkout -b BRANCH_NAME
-        make some changes and commits
+	this repo will be the cloned branch you used earlier in part II
+	from person-B
+	git checkout -b BRANCH_NAME
+	make some changes and commits
 2. person-A push the change to your github account
-        git push origin (master) *this is what you did before
-        git push origin BRANCH_NAME *this is what you will do now
+	git push origin (master) *this is what you did before
+	git push origin BRANCH_NAME *this is what you will do now
 3. person-A create a pull request to person-B
 4.1. collaborate
 5. person-B accept the change
-        This change will take the branch from person A
-        and merge it into person B's master branch
+	This change will take the branch from person A
+	and merge it into person B's master branch
 
 Part II
 1. person-B make a new change after your pull request
-        Either do it on a new branch
+	Either do it on a new branch
 2. person-B send yourself a pull request and have person a collaborate, and merge
 3. person-A get the new changes from person-B
-        (git pull upstream)
-4. person-A update your github fork so it is the same as
-Person-B 
+	(git pull upstream)
+4. person-A update your github fork so it is the same as Person-B 
 ```
 
 # Etherpad Contents
