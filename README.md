@@ -14,6 +14,8 @@ Github websites and blogs: https://pages.github.com/
 
 The website for today's lesson can be found here: http://chendaniely.github.io/2015-11-23-harvard/.
 
+The repository for the git stuff done in class is here: https://github.com/chendaniely/2015-11-23-harvard-git
+
 You can read up on the software carpentry Git lesson here: http://swcarpentry.github.io/git-novice/
 
 Link to the etherpad: http://pad.software-carpentry.org/2015-11-23-harvard
